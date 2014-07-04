@@ -1,0 +1,60 @@
+title:            Project
+description:      Blog for recording the way of learning.
+#Your site's domain goes here. Leave localhost server or blank when working locally.
+baseurl:          /project
+url:              http://lendfating.github.com
+
+# Owner/author information
+owner:
+  name:           Lendfating
+  avatar:         /assets/images/avatar.jpg
+  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  email:          lizhen00000@gmail.com
+  # Social networking links used in footer. Update and remove as you like.
+  twitter:        
+  facebook:       
+  github:         
+  linkedin:       
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:   
+  weibo:         http://www.weibo.com/Lendfating
+
+# Analytics and webmaster tools stuff goes here
+google_analytics:   
+google_verify:      
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:         
+
+# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone:    Asia/Beijing
+future:      true
+pygments:    true
+markdown:    kramdown
+
+# https://github.com/mojombo/jekyll/wiki/Permalinks
+permalink:   /:categories/:title/
+
+# Amount of post to show on home page
+paginate: 10
+paginate_path: "page:num"
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  use_coderay: true
+
+  coderay:
+    coderay_line_numbers: nil
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: class
+
+source:      ../
+destination: ../_site/project
+plugins:     ../_plugins
+layouts:     ../_layouts
+include: [".htaccess"]
+exclude: [ "assets", "study", "_posts/study", "other", "_posts/other", "home.html", "publish.bat"]

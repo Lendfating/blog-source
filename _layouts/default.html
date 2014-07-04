@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+	
+	<body class="output">
+	
+		{% include navbar-default.html %}
+
+		<!-- 主面板显示区域 -->
+		<div class="row-fluid">
+			{{ content }}
+		</div>
+		<!-- end of 主面板显示区域 -->
+
+		{% include footer.html %}
+		
+	</body>
+</html>

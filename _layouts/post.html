@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+	
+	<body class="post output reader-day-mode reader-font1">
+	
+		{% include navbar-post.html %}
+
+		<!-- 主体显示区 -->
+		<div id="show-note-container">
+			<div class="post-bg" id="flag">
+				<div class="container">
+					<div class="people">
+						<a href="{{ site.baseurl }}/categories/{{ page.categories }}" class="author name">
+							<div class="avatar">
+								<img src="/assets/images/categories/{{ page.categories }}.jpg">
+							</div>
+							<br>
+							{{ page.categories }}
+						</a>
+						<div class="about">
+							<p class="description intro">你就是那个异想天开的诗人</p>
+						</div>
+					</div>
+					<div class="article">
+						<div class="preview">
+							<h1 class="title">{{ page.title }}</h1>
+							<div class="article-info">
+								<p>
+									发表于
+									<a href="{{ site.baseurl }}/categories/{{ page.categories }}"><i class="icon-book"></i>{{ page.categories }}</a>
+									{{ post.date | date: "%B %d, %Y" }}
+									&nbsp;
+									<i class="icon-th"></i>
+									{% for tag in post.tags %}
+										<a class="collections" href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
+									{% endfor %}
+								</p>
+							</div>
+							<div class="show-content">
+								{{ page.content }}
+							</div>
+							<div class="meta-bottom clearfix">
+								<div id="like-btn-package" class="like">
+									<a href="" class="btn like-button ">
+										<i class="icon-heart-empty"></i> 喜欢
+									</a>
+								</div>
+								<ul class="share-note-text">
+									<li><a href="" class="write-letter"><i class="icon-envelope"></i></a></li>
+									<li><a href=""><i class="icon-weixin"></i></a></li>
+									<li><a href=""><i class="icon-weibo"></i></a></li>
+									<li><a href=""><i class="icon-twitter"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Functions -->
+			<script>
+			function change_tab_pane(index){
+				obj_li = jQuery("div.function div.comment ul.nav li");
+				obj_tab_pane = jQuery("div.function div.comment div.tab-content div.tab-pane");
+				obj_li.removeClass("active");
+				$(obj_li[index]).addClass("active");
+				obj_tab_pane.removeClass("active");
+				$(obj_tab_pane[index]).addClass("active");
+			}
+			</script>
+			<div class="function">
+				<div class="comment">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#" onclick="change_tab_pane(0); return false;">入选专题</a>
+						</li>
+						<li class="nav-author">
+							<a href="#" onclick="change_tab_pane(1); return false;">作者信息</a>
+						</li>
+						<li class="">
+							<a href="#" onclick="change_tab_pane(2); return false;">评论</a>
+						</li>
+						<li class="">
+							<a href="#" onclick="change_tab_pane(3); return false;">喜欢</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="collections tab-pane clearfix active" id="collections">
+							<ul id="note-collections">
+								<li>
+									<a href="{{ site.baseurl }}/categories/{{ page.categories }}">
+										<div class="img-broder">
+											<img src="/assets/images/categories/{{ page.categories }}.jpg" thumbnail="300x300">
+										</div>
+										<br>
+										{{ page.categories }}
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="tab-pane" id="author">
+							<div class="people">
+								<a href="http://jianshu.io/users/218f09480a7f" class="author name">
+									<div class="avatar">
+										<img src="{{ site.owner.avatar }}">
+									</div>
+									<br>
+									{{ site.owner.name }}
+								</a>
+								<div class="about">
+									<p class="intro">{{ site.owner.bio }}</p>
+								</div>
+								<div class="sns">
+									<a href="http://www.douban.com/people/44147851" target="_blank"><img alt="Douban_48" src="./cce536fd6811_files/douban_48-be5d39195c94e54ddf7077ed2fa27901.png"></a>
+								</div>
+							</div>
+						</div>
+						<div class="comment-list clearfix tab-pane" id="comments">
+						</div>
+						<div class="tab-pane clearfix like" id="like">
+						</div>
+						{% if page.previous.url %}
+						<a href="{{ site.baseurl }}/{{ page.previous.url }}" class="before">
+							<i class="icon-arrow-left"></i>上一篇
+						</a>
+						{% endif %}
+						{% if page.next.url %}
+						<a href="{{ site.baseurl }}/{{ page.next.url }}" class="after">
+							下一篇<i class="icon-arrow-right"></i>
+						</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end of 主体显示区 -->
+		
+	</body>
+</html>

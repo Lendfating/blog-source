@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="collections ranking">
+	<div class="span3 left-aside">
+		<img class="cover-img" />
+		<div class="bottom-block">
+			<h1>博客</h1>
+			<h3>记录思想，留迹墨香</h3>
+			<p>最好的青春，当做最有意义的事情，切莫虚度了此时，后悔了明日。</p>
+			<a class="btn btn-large btn-success">写点什么</a>
+		</div>
+	</div>
+	<div class="span7 offset3 ranking-list">
+		<div class="page-title">
+			<ul class="ranking-nav navigation clearfix">
+				<li class="active"><a>学习 · 总结 · 分享</a></li>
+				<li class="search"><input type="text" placeholder="搜索" class="input-medium search-query"></li>
+			</ul>
+		</div>
+		<div class="tab-pane active">
+			<h4 class="guide-title">请选择待查找的博客标签，方便我们对博客进行过滤</h4>
+			<div class="subscribe-guide">
+				<ul class="unstyled clearfix sort-nav">
+					<li>
+						<a href="{{ site.baseurl }}/tags">全部</a>
+					</li>
+					{% for tag in site.tags %}
+					<li {% if tag[0] == page.tag %} class="active" {% endif %}>
+						<a href="{{ site.baseurl }}/tags/{{ tag | first }}">{{ tag | first }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+				<div class="tab-content">
+					<div id="list-container" class="tab-pane active weeks">
+						<ul class="top-notes">
+							{% for post in site.tags.[page.tag] %}
+							<li>
+								<b>{{ forloop.index }}</b>
+								<a class="maleskine-author avatar" href="{{ site.baseurl }}/categories/{{ post.categories }}" target="_blank">
+									<img alt="100" src="/assets/images/categories/{{ post.categories }}.jpg">
+								</a>
+								<h4><a href="{{ site.baseurl }}/{{ post.url }}" target="_blank">{{ post.title }}</a></h4>
+								<div class="article-info">
+									<i class="icon-book"></i>
+									<a class="notebook" href="{{ site.baseurl }}/categories/{{ post.categories }}" target="_blank">{{ post.categories }}</a>
+									<i class="icon-th"></i>&nbsp;
+									{% for tag in post.tags %}
+										<a class="collections" href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
+									{% endfor %}
+									&nbsp;
+									<i class="icon-clock"></i>
+									{{ post.date | date: "%B %d, %Y" }}
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="collections">
+	<div class="span3 left-aside">
+		<img class="cover-img" />
+		<div class="bottom-block">
+			<h1>专题</h1>
+			<h3>让思想汇聚、流传</h3>
+			<p>专题的内容由多位写作者提供</p>
+			<a class="btn btn-large btn-success">新建专题</a>
+		</div>
+	</div>
+	<div class="offset3 span7">
+		<div id="list-container" class="tab-pane active">
+			<ul id="all-collections" class="thumbnails">
+				{% for category in site.categories %}
+				<li class="span4">
+					<a href="{{ site.baseurl }}/categories/{{ category | first }}/" class="thumbnail">
+						<div class="avatar">
+							<img src="/assets/images/categories/{{ category | first }}.jpg" thumbnail="180x180">
+						</div>
+						<h4>{{ category | first }}</h4>
+						<div class="editor">秋纫 编</div>
+					</a>
+					<div class="meta">
+						<a href="{{ site.baseurl }}/categories/{{ category | first }}/" class="btn follow">
+							<i class="icon-plus icon-ok"></i> 访问专题 | {{ category | last | size }}
+						</a>
+					</div>
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
