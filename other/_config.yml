@@ -1,3 +1,4 @@
+encoding:         utf-8
 title:            Other
 description:      Blog for recording the way of learning.
 #Your site's domain goes here. Leave localhost server or blank when working locally.
@@ -32,7 +33,7 @@ pygments:    true
 markdown:    kramdown
 
 # https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+# permalink:   /:categories/:title/ 带着会出现中文异常（对分类、中文文章名无法处理）
 
 # Amount of post to show on home page
 paginate: 10
