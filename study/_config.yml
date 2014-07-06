@@ -9,22 +9,22 @@ url:              http://lendfating.github.com
 owner:
   name:           Lendfating
   avatar:         /assets/images/avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
+  bio:            "I am a student majoring in computer science at UCAS now. And I will be graduating in 2016 summer."
   email:          lizhen00000@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  linkedin:       
-  # For Google Authorship https://plus.google.com/authorship
-  google_plus:   
+  github:         https://github.com/Lendfating
+  linkedin:       http://www.linkedin.com/profile/view?id=352723424&authType=name&authToken=C1k5&trk=member-photo
   weibo:         http://www.weibo.com/Lendfating
+  twitter:        https://twitter.com/Lendfating
+  facebook:       https://www.facebook.com/lendfating
+  # For Google Authorship https://plus.google.com/authorship
+  google_plus:   https://plus.google.com/u/0/104389003870280325782/posts
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+google_analytics:   UA-52550195-1
+google_verify:      fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY
+
+disqus_shortname: lendfating
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    Asia/Beijing
@@ -54,8 +54,8 @@ kramdown:
     coderay_css: class
 
 source:      ../
-destination: ../_site/study
+destination: /workspace/lendfating.github.com/study
 plugins:     ../_plugins
 layouts:     ../_layouts
 include: [".htaccess"]
-exclude: [ "assets", "project", "_posts/project", "other", "_posts/other", "home.html", "publish.bat"]
+exclude: [ "assets", "project", "_posts/project", "other", "_posts/other", "home.html", "publish.bat", "robots.txt"]

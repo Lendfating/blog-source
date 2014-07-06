@@ -29,6 +29,7 @@ cd ..
 :: /E 复制目录和子目录，包括空目录。
 copy home.html %BUILD_PATH%\index.html
 copy favicon.ico %BUILD_PATH%\favicon.ico
+copy robots.txt %BUILD_PATH%\robots.txt
 xcopy assets %BUILD_PATH%\assets\ /D/E/Y
 
 :: 如果编译或拷贝出错，直接跳出

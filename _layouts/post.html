@@ -20,7 +20,7 @@
 							{{ page.categories }}
 						</a>
 						<div class="about">
-							<p class="description intro" category="{{ page.category }}">你就是那个异想天开的诗人</p>
+							<p class="description intro" category="{{ page.categories }}">该专题没有描述信息</p>
 						</div>
 					</div>
 					<div class="article">
@@ -28,12 +28,12 @@
 							<h1 class="title">{{ page.title }}</h1>
 							<div class="article-info">
 								<p>
-									发表于
+									发表于： {{ page.date | date: "%B %d, %Y" }} 
+									&nbsp;&nbsp; 
 									<a href="{{ site.baseurl }}/categories/{{ page.categories }}"><i class="icon-book"></i>{{ page.categories }}</a>
-									{{ post.date | date: "%B %d, %Y" }}
 									&nbsp;
 									<i class="icon-th"></i>
-									{% for tag in post.tags %}
+									{% for tag in page.tags %}
 										<a class="collections" href="{{ site.baseurl }}/tags/{{ tag }}">{{ tag }}</a>
 									{% endfor %}
 								</p>
@@ -48,10 +48,9 @@
 									</a>
 								</div>
 								<ul class="share-note-text">
-									<li><a href="" class="write-letter"><i class="icon-envelope"></i></a></li>
-									<li><a href=""><i class="icon-weixin"></i></a></li>
-									<li><a href=""><i class="icon-weibo"></i></a></li>
-									<li><a href=""><i class="icon-twitter"></i></a></li>
+									<li><a href="mailto:{{ site.owner.email }}"><i class="icon-envelope"></i></a></li>
+									<li><a href="{{ site.owner.weibo }}"><i class="icon-weibo"></i></a></li>
+									<li><a href="{{ site.owner.twitter }}"><i class="icon-twitter"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -79,7 +78,7 @@
 							<a href="#" onclick="change_tab_pane(1); return false;">作者信息</a>
 						</li>
 						<li class="">
-							<a href="#" onclick="change_tab_pane(2); return false;">评论</a>
+							<a href="#" onclick="change_tab_pane(2); open_disqus_comments(); return false;">评论</a>
 						</li>
 						<li class="">
 							<a href="#" onclick="change_tab_pane(3); return false;">喜欢</a>
@@ -112,11 +111,18 @@
 									<p class="intro">{{ site.owner.bio }}</p>
 								</div>
 								<div class="sns">
-									<a href="http://www.douban.com/people/44147851" target="_blank"><img alt="Douban_48" src="./cce536fd6811_files/douban_48-be5d39195c94e54ddf7077ed2fa27901.png"></a>
+									<a href="mailto:{{ site.owner.email }}"><i class="icon-envelope"></i></a>
+									<a href="{{ site.owner.github }}"><i class="icon-github"></i></a>
+									<a href="{{ site.owner.linkedin }}"><i class="icon-linkedin"></i></a>
+									<a href="{{ site.owner.weibo }}"><i class="icon-weibo"></i></a>
+									<a href="{{ site.owner.twitter }}"><i class="icon-twitter"></i></a>
+									<a href="{{ site.owner.facebook }}"><i class="icon-facebook"></i></a>
+									<a href="{{ site.owner.google_plus }}"><i class="icon-google-plus"></i></a>
 								</div>
 							</div>
 						</div>
 						<div class="comment-list clearfix tab-pane" id="comments">
+						{% include disqus-comments.html %}
 						</div>
 						<div class="tab-pane clearfix like" id="like">
 						</div>
@@ -135,6 +141,8 @@
 			</div>
 		</div>
 		<!-- end of 主体显示区 -->
+		
+		{% include google-analytics.html %}
 		
 	</body>
 </html>
