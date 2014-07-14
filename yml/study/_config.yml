@@ -1,8 +1,8 @@
 encoding:         utf-8
-title:            Other
-description:      Blog for recording the way of life.
+title:            Study
+description:      Blog for recording the way of learning.
 #Your site's domain goes here. Leave localhost server or blank when working locally.
-baseurl:          /other
+baseurl:          /study
 url:              http://lendfating.github.com
 
 # Owner/author information
@@ -53,9 +53,9 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: class
 
-source:      ../
-destination: /workspace/lendfating.github.com/other
-plugins:     ../_plugins
-layouts:     ../_layouts
+source:      ../../
+destination: /workspace/lendfating.github.com/study
+plugins:     ../../_plugins
+layouts:     ../../_layouts
 include: [".htaccess"]
-exclude: [ "assets", "study", "_posts/study", "project", "_posts/project", "home.html", "publish.bat", "robots.txt"]
+exclude: [ "assets", "yml", "_posts/project", "_posts/other", "home.html", "publish.bat", "robots.txt"]

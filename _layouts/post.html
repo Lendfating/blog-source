@@ -28,7 +28,7 @@
 							<h1 class="title">{{ page.title }}</h1>
 							<div class="article-info">
 								<p>
-									发表于： {{ page.date | date: "%B %d, %Y" }} 
+									<i class="icon-clock"></i> {{ page.date | date: "%B %d, %Y" }} 
 									&nbsp;&nbsp; 
 									<a href="{{ site.baseurl }}/categories/{{ page.categories }}"><i class="icon-book"></i>{{ page.categories }}</a>
 									&nbsp;
@@ -39,18 +39,18 @@
 								</p>
 							</div>
 							<div class="show-content">
-								{{ page.content }}
+								{{ content }}
 							</div>
 							<div class="meta-bottom clearfix">
 								<div id="like-btn-package" class="like">
-									<a href="" class="btn like-button ">
+									<a onclick="return false;" class="btn like-button ">
 										<i class="icon-heart-empty"></i> 喜欢
 									</a>
 								</div>
 								<ul class="share-note-text">
-									<li><a href="mailto:{{ site.owner.email }}"><i class="icon-envelope"></i></a></li>
-									<li><a href="{{ site.owner.weibo }}"><i class="icon-weibo"></i></a></li>
-									<li><a href="{{ site.owner.twitter }}"><i class="icon-twitter"></i></a></li>
+									<li><a href="mailto:{{ site.owner.email }}" target="_blank"><i class="icon-envelope"></i></a></li>
+									<li><a href="{{ site.owner.weibo }}" target="_blank"><i class="icon-weibo"></i></a></li>
+									<li><a href="{{ site.owner.twitter }}" target="_blank"><i class="icon-twitter"></i></a></li>
 								</ul>
 							</div>
 						</div>
@@ -111,13 +111,13 @@
 									<p class="intro">{{ site.owner.bio }}</p>
 								</div>
 								<div class="sns">
-									<a href="mailto:{{ site.owner.email }}"><i class="icon-envelope"></i></a>
-									<a href="{{ site.owner.github }}"><i class="icon-github"></i></a>
-									<a href="{{ site.owner.linkedin }}"><i class="icon-linkedin"></i></a>
-									<a href="{{ site.owner.weibo }}"><i class="icon-weibo"></i></a>
-									<a href="{{ site.owner.twitter }}"><i class="icon-twitter"></i></a>
-									<a href="{{ site.owner.facebook }}"><i class="icon-facebook"></i></a>
-									<a href="{{ site.owner.google_plus }}"><i class="icon-google-plus"></i></a>
+									<a href="mailto:{{ site.owner.email }}" target="_blank"><i class="icon-envelope"></i></a>
+									<a href="{{ site.owner.github }}" target="_blank"><i class="icon-github"></i></a>
+									<a href="{{ site.owner.linkedin }}" target="_blank"><i class="icon-linkedin"></i></a>
+									<a href="{{ site.owner.weibo }}" target="_blank"><i class="icon-weibo"></i></a>
+									<a href="{{ site.owner.twitter }}" target="_blank"><i class="icon-twitter"></i></a>
+									<a href="{{ site.owner.facebook }}" target="_blank"><i class="icon-facebook"></i></a>
+									<a href="{{ site.owner.google_plus }}" target="_blank"><i class="icon-google-plus"></i></a>
 								</div>
 							</div>
 						</div>

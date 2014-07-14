@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="google-site-verification" content="fZui8gemJWp_6GIGMGUgnF5l5o5b0RgzDhfmzv-PSnY" />
     <title>Lendfating</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="assets/css/index-style.css" type="text/css">
     <script src="/assets/js/jquery-1.11.0.min.js" type="text/javascript"></script>
 </head>
@@ -15,7 +14,7 @@
         <!-- //lHeader start here -->
         <header id="head">
             <div id="logo" class="fn-clear">
-                <h1><a href="#" class="avatar"></a></h1>
+                <h1><a href="http://www.linkedin.com/profile/view?id=352723424&authType=name&authToken=C1k5&trk=member-photo" class="avatar"></a></h1>
 				<h1>Lendfating</h1>
             </div>
 			<div id="info" class="fn-clear">
@@ -57,33 +56,19 @@
     <script type="text/javascript">
         $(document).ready(function() {
             /**
-             *  heightlight Menu
+             * toggle left
              */
-            var navs, url, cur, i;
-            navs = $("#nav li a");
-            for(i = 1 ; i < navs.length; i++ ){
-                url = navs[i].href;
-                cur = window.location.href;
-                if(cur.indexOf(url) !=-1) {
-                    navs[i].className = "active";
-                    navs[0].className = "";
-                }
-                if(cur != navs[0].href) {
-                    navs[0].className = "";
-                }
-            }
-
-            /**
-             * close left
-             */
-            $("#J-closeLeft").toggle(function() {
-                $("#head").addClass("head-hide");
-                $("#contain").addClass("contain-full");
-            }, function() {
-                $("#head").removeClass("head-hide");
+			function open_left(){
+				$("#head").removeClass("head-hide");
                 $("#contain").removeClass("contain-full");
-            });
-
+				$("#J-closeLeft").click(close_left);
+			}
+			function close_left(){
+				$("#head").addClass("head-hide");
+                $("#contain").addClass("contain-full");
+				$("#J-closeLeft").click(open_left);
+			}
+            $("#J-closeLeft").click(close_left);
         });
     </script>
 </body></html>

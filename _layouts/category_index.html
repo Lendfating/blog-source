@@ -10,7 +10,7 @@ layout: default
 			<a href="{{ site.baseurl }}/categories/{{ page.category }}">{{ page.category }}</a>
 		</h3>
 		<p class="description" category="{{ page.category }}"></p>
-		<div class="meta"><a>{{ page.category | last | size }} 篇文章</a></div>
+		<div class="meta"><a>{{ site.categories.[page.category] | size }} 篇文章</a></div>
 		<div class="author">
 			<a href="">呈熙</a> 编
 		</div>

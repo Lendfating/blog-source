@@ -53,9 +53,9 @@ kramdown:
     coderay_bold_every: 10
     coderay_css: class
 
-source:      ../
+source:      ../../
 destination: /workspace/lendfating.github.com/project
-plugins:     ../_plugins
-layouts:     ../_layouts
+plugins:     ../../_plugins
+layouts:     ../../_layouts
 include: [".htaccess"]
-exclude: [ "assets", "study", "_posts/study", "other", "_posts/other", "home.html", "publish.bat", "robots.txt"]
+exclude: [ "assets", "yml", "_posts/study", "_posts/other", "home.html", "publish.bat", "robots.txt"]

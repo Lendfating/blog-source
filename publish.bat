@@ -11,6 +11,7 @@ chcp 65001
 
 :: 根据需要有针对的编译网站
 set blog_type = %1
+cd yml
 if defined blog_type (
 	cd %blog_type%
 	call jekyll build -d %BUILD_PATH%\%blog_type%
@@ -22,7 +23,7 @@ if defined blog_type (
 	cd ../other
 	call jekyll build -d %BUILD_PATH%\other
 )
-cd ..
+cd ../../
 
 :: 如果有更新，则重新更新所有资源文件（图片等资源）
 :: /D:m-d-y 复制在指定日期或指定日期以后更改的文件,如果没有提供日期，只复制那些源时间比目标时间新的文件。
